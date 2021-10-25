@@ -5,7 +5,8 @@
 Cryptocurrency is a highly volatile market.
 It serves potential participating in rapidly changing values up and down.
 That represents , which is a high risk at the same time. 
-Daytrading has a high potential to participate from 
+Approach is to create a tool that monitors changes on the market and reacts automatically.
+
 
 
 ## Development
@@ -14,6 +15,8 @@ Daytrading has a high potential to participate from
 0.1 Github Repo with Maven workflow
 0.2 Setup local environment on Intelij
 
+
+### Sketch: [UI](./bitmaps/tradomatorScribble211025.pdf)
 
 #### US-1: "User Story 1" - Create model DTO 
 - 1.0 Explore [Binance Test REST API](https://binance-docs.github.io/apidocs/spot/en/#change-log) 
