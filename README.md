@@ -12,8 +12,17 @@ Approach is to create a tool that monitors changes on the market and reacts auto
 ## Development
 
 ### Setup Development environment on Github.
-0.1 Github Repo with Maven workflow
-0.2 Setup local environment on Intelij
+#### 0.1 Github Repo with Maven workflow
+
+- CI: continuous integration
+  - maven build
+  - 
+
+- CD: continuous deployment:
+- docker / mongoDB - mongo cloud / 
+- heroku deployment
+#### 0.2 Setup local environment on Intelij
+#### 0.3 pom.xml dependencies
 
 
 ### Sketch: [UI](./bitmaps/tradomatorScribble211025.pdf)
