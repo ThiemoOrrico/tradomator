@@ -22,8 +22,15 @@ Approach is to create a tool that monitors changes on the market and reacts auto
 - docker / mongoDB - mongo cloud / 
 - heroku deployment
 #### 0.2 Setup local environment on Intelij
-#### 0.3 pom.xml dependencies
+- BACKEND:
+- Spring Initalizr or create Module
+- pom.xml dependencies
+- Result: Spring Boot Application
 
+- FRONTEND
+- React: npx create-react-app name-of-project im Terminal 
+- Create Frontend Folder 
+- npm install npm start
 
 ### Sketch: [UI](./bitmaps/tradomatorScribble211025.pdf)
 
