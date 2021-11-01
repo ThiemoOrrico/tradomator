@@ -2,7 +2,7 @@ package com.tradomator.service.factory;
 
 import com.tradomator.model.CoinIdCard;
 import com.tradomator.model.CurrentAvgPrice;
-import com.tradomator.model.coinGeckoApi.GeckoCoinApi;
+import com.tradomator.model.coingeckoapi.GeckoCoinApi;
 import org.springframework.stereotype.Service;
 
 @Service
