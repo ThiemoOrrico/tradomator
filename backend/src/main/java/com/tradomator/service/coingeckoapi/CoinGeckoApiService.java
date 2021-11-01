@@ -1,5 +1,6 @@
 package com.tradomator.service.coingeckoapi;
 
+import com.tradomator.model.coingeckoapi.CoingeckoListApi;
 import com.tradomator.model.coingeckoapi.GeckoCoinApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,14 +27,6 @@ public class CoinGeckoApiService {
                 .block(Duration.ofSeconds(3));
     }
 
-    public GeckoCoinApi getCoinListFromCoinGecko(){
-        return webClient
-                .get()
-                .uri("/coins/List")
-                .retrieve()
-                .bodyToMono(GeckoCoinApi.class)
-                .block(Duration.ofSeconds(3));
 
-    }
 
 }
