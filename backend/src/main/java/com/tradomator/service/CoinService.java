@@ -5,7 +5,6 @@ import com.tradomator.model.CoinIdCard;
 import com.tradomator.model.coingeckoapi.GeckoCoinApi;
 import com.tradomator.service.coingeckoapi.CoinGeckoApiService;
 import com.tradomator.service.factory.CoinFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,6 @@ public class CoinService {
 
     private final CoinGeckoApiService coinGeckoApiService;
     private final CoinFactory coinFactory;
-
 
     @Autowired
     public CoinService(CoinGeckoApiService coinGeckoApiService, CoinFactory coinFactory){
