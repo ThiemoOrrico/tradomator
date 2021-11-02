@@ -32,6 +32,4 @@ public class CoinGeckoController {
         return coinService.getCoinDataById(coinId);
     }
 
-
-
 }
