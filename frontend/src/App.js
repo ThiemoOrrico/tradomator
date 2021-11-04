@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import SimpleBottomNavigation from "./components/BottomNavigation";
+import TempCardOverview from "./components/TempCardOverview";
 
 
 function App() {
@@ -7,8 +7,8 @@ function App() {
 
             <div className="App">
                 <Header/>
+                <TempCardOverview/>
 
-                <SimpleBottomNavigation/>
             </div>
 
     );
