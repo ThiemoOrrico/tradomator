@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-
+import SimpleBottomNavigation from "./components/BottomNavigation";
 
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
 
             <div className="App">
                 <Header/>
+
+                <SimpleBottomNavigation/>
             </div>
 
     );
