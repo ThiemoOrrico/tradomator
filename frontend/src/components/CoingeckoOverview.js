@@ -1,11 +1,8 @@
 import CryptoCard from './CryptoCard'
 import styled from 'styled-components/macro'
-import LoadingSpinner from './LoadingSpinner'
+
 
 export default function CoingeckoOverview({ coins }) {
-    if (coins.length === 0) {
-        return <LoadingSpinner />
-    }
 
     return (
         <Wrapper>

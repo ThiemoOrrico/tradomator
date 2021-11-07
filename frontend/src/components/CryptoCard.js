@@ -1,49 +1,59 @@
 import styled from 'styled-components/macro'
 import { convertToReadableDate } from '../service/date-service'
-import {CCard, CCardBody, CCardImage, CCardText, CCardTitle, CCol, CRow} from "@coreui/react";
 
 export default function CryptoCard({ coinData }) {
     return (
+        <Wrapper>
 
-        <>
-            {
-                [
-                { color: 'primary', textColor: 'white' }
+            <section>
+                <Image src={coinData?.imageUrl} alt={''} />
+                <h2>{coinData?.name}</h2>
+            </section>
 
-                ].map((item, index) => (
+            <section>
+                <p>{coinData?.currentAvgPrice?.usd} $</p>
+            </section>
 
-                <CCard
-                    color={item.color}
-                    textColor={item.textColor}
-                    className="mb-3"
-                    style={{ maxWidth: '18rem' }}
-                    key={index}
-                >
-
-                    <CRow className="g-0">
-                        <CCol md={4}>
-                            <CCardImage src={coinData?.imageUrl} alt={''} />
-                        </CCol>
-
-                        <CCol md={8}>
-                            <CCardBody>
-                                <CCardTitle>{item.color} {coinData?.name}</CCardTitle>
-                                <CCardText> USD {coinData?.currentAvgPrice?.usd} </CCardText>
-
-                                <CCardText>
-                                    <small className="text-medium-emphasis"> {convertToReadableDate(coinData?.lastUpdated)} </small>
-                                </CCardText>
-
-                            </CCardBody>
-                        </CCol>
-                    </CRow>
-                </CCard>
-                ))
-            }
-
-        </>
-
+            {coinData && (
+                <p>
+                    Last updated: {convertToReadableDate(coinData?.lastUpdated)}
+                </p>
+            )}
+        </Wrapper>
     )
 }
 
+const Wrapper = styled.div`
+  border: 2px solid ${({ theme }) => theme.text};
+  padding: var(--spacing-m);
+  margin: var(--spacing-s);
+`
 
+const CardHeader = styled.section`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.3em;
+`
+
+const Image = styled.img`
+  height: 100%;
+`
+
+const CardData = styled.section`
+  display: grid;
+  justify-content: center;
+
+  p {
+    font-size: 1.6em;
+    text-align: center;
+    margin: var(--spacing-s);
+  }
+`
+
+const CardInfo = styled.p`
+  font-size: 0.7em;
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: end;
+`

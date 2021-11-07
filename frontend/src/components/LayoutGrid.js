@@ -7,10 +7,16 @@ import PropTypes from 'prop-types';
 import HeaderNavBar from "./HeaderNavBar";
 import MainContent from "./MainContent";
 import FooterNavBar from "./FooterNavBar";
-
+import CoingeckoOverview from "./CoingeckoOverview";
+import useGeckoCoins from "../hooks/useGeckoCoins";
 
 
 export default function LayoutGrid() {
+
+    const { coins } =
+        useGeckoCoins()
+
+
     return (
         <React.Fragment>
             <CssBaseline />
@@ -33,9 +39,9 @@ export default function LayoutGrid() {
                             bgcolor: 'blue',
                         }}
                     >
-                        <HeaderNavBar sx={{height: 1/10}}>Item 1</HeaderNavBar>
-                        <MainContent sx={{height: 8/10}}>Item 2</MainContent>
-                        <FooterNavBar sx={{height: 1/10}}>Item 3</FooterNavBar>
+                        <HeaderNavBar sx={{height: 1/10}}/>
+                        <CoingeckoOverview coins={coins} sx={{maxHeight: 8/10}}/>
+                        <FooterNavBar sx={{height: 1/10}}/>
 
                     </Box>
 
