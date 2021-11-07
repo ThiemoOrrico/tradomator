@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CurrentAvgPrice {
+public class CurrentPrice {
 
     private float usd;
 

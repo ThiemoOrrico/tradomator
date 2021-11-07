@@ -11,7 +11,7 @@ export default function CryptoCard({ coinData }) {
             </section>
 
             <section>
-                <p>{coinData?.currentAvgPrice?.usd} $</p>
+                <p>{coinData?.currentPrice?.usd} $</p>
             </section>
 
             {coinData && (

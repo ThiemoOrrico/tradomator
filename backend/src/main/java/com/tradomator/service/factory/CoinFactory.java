@@ -1,7 +1,7 @@
 package com.tradomator.service.factory;
 
 import com.tradomator.model.CoinIdCard;
-import com.tradomator.model.CurrentAvgPrice;
+import com.tradomator.model.CurrentPrice;
 import com.tradomator.model.coingeckoapi.GeckoCoinApi;
 import org.springframework.stereotype.Service;
 
@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
 public class CoinFactory {
 
     public CoinIdCard mapToCoin(GeckoCoinApi geckoCoinApi){
-        CurrentAvgPrice currentAvgPriceApi = geckoCoinApi.getMarketData().getCurrentPriceApi();
+        CurrentPrice currentPriceApi = geckoCoinApi.getMarketData().getCurrentPriceApi();
         return CoinIdCard
                 .builder()
                 .id(geckoCoinApi.getId())
                 .symbol(geckoCoinApi.getSymbol())
                 .name(geckoCoinApi.getName())
-                .currentAvgPrice(CurrentAvgPrice
+                .currentPrice(CurrentPrice
                         .builder()
 
-                        .usd(currentAvgPriceApi.getUsd())
+                        .usd(currentPriceApi.getUsd())
                         .build()
                 )
                 .imageUrl(geckoCoinApi.getImage().getImageUrl())

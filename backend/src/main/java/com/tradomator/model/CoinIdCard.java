@@ -15,7 +15,7 @@ public class CoinIdCard {
     private String id;
     private String symbol;
     private String name;
-    private CurrentAvgPrice currentAvgPrice;
+    private CurrentPrice currentPrice;
     private String imageUrl;
     private LocalDateTime lastUpdated;
 }

@@ -28,8 +28,9 @@ public class CoinGeckoController {
     }
 
     @GetMapping("{coinId}")
-    public CoinIdCard getCoinSymbolWithAvgPrice(@PathVariable String coinId){
+    public CoinIdCard getCoinSymbolWithPrice(@PathVariable String coinId){
         return coinService.getCoinDataById(coinId);
     }
+
 
 }
