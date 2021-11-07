@@ -9,7 +9,7 @@ import {GlobalStyle} from "./GlobalStyle";
 
 ReactDOM.render(
   <React.StrictMode>
-      <GlobalStyle></GlobalStyle>
+
       <App />
 
   </React.StrictMode>,
