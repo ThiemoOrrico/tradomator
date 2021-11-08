@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Builder
-public class GeckoCoinApi {
+public class CgeckoApiCoin {
     private String id;
     private String symbol;
     private String name;
