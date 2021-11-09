@@ -1,7 +1,6 @@
-package com.tradomator.service.factory;
+package com.tradomator.service.mapperapi;
 
 import com.tradomator.model.CoinIdCard;
-import com.tradomator.model.CurrentPrice;
 import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CoinFactory {
+public class CoingeckoMapper {
 
     public List<CoinIdCard> mapToCoin(CgeckoApiCoin[] cgeckoApiCoins){
         List<CoinIdCard> coinIdCards = new ArrayList<>();
@@ -34,23 +33,3 @@ public class CoinFactory {
         }
     }
 
-/*OLD
-    public CoinIdCard mapToCoin(CgeckoCoinApi cgeckoCoinApi){
-        CurrentPrice currentPriceApi = cgeckoCoinApi.getMarketData().getCurrentPriceApi();
-        return CoinIdCard
-                .builder()
-                .id(cgeckoCoinApi.getId())
-                .symbol(cgeckoCoinApi.getSymbol())
-                .name(cgeckoCoinApi.getName())
-                .currentPrice(CurrentPrice
-                        .builder()
-
-                        .usd(currentPriceApi.getUsd())
-                        .build()
-                )
-                .imageUrl(cgeckoCoinApi.getImage().getImageUrl())
-                .lastUpdated(cgeckoCoinApi.getLastUpdated())
-                .build();
-    }
-
- */

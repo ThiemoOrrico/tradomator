@@ -22,13 +22,14 @@ public class CoinGeckoController {
         this.coinService = coinService;
     }
 
+
     @GetMapping
-    public List<CoinIdCard> getStandardCoins() {
-        return coinService.getStandardCoins();
+    public List<CoinIdCard> getAllCoinsFromCoingeckoApi(){
+        return coinService.getCoinDataById();
     }
 
     @GetMapping("{coinId}")
-    public CoinIdCard getCoinSymbolWithPrice(@PathVariable String coinId){
+    public List<CoinIdCard> getCoinSymbolWithPrice(@PathVariable String coinId){
         return coinService.getCoinDataById();
     }
 

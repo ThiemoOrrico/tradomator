@@ -2,17 +2,18 @@ package com.tradomator.model.coingeckoapi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Builder
+//@Builder
+
+
 public class CgeckoApiCoin {
+
     private String id;
     private String symbol;
     private String name;
@@ -22,4 +23,6 @@ public class CgeckoApiCoin {
     private ImageApi image;
     @JsonProperty("last_updated")
     private LocalDateTime lastUpdated;
+
+
 }
