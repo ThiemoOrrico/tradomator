@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class CoinGeckoApiService {
+public class CoingeckoApiService {
 
     private static final String COINGECKO_API_URL = "https://api.coingecko.com/api/v3/coins";
     private final RestTemplate restTemplate = new RestTemplate();

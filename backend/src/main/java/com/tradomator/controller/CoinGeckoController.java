@@ -24,7 +24,7 @@ public class CoinGeckoController {
 
 
     @GetMapping
-    public List<CoinIdCard> getAllCoinsFromCoingeckoApi(){
+    public List<CoinIdCard> getFirst100CoinsFromCoingeckoApi(){
         return coinService.getCoinDataById();
     }
 
