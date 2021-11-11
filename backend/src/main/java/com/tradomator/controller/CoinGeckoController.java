@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import java.util.List;
 
 @RestController
@@ -22,16 +23,14 @@ public class CoinGeckoController {
         this.coinService = coinService;
     }
 
-
     @GetMapping
     public List<CoinIdCard> getFirst100CoinsFromCoingeckoApi(){
-        return coinService.getCoinDataById();
+        return coinService.getAllCoinData();
     }
 
     @GetMapping("{coinId}")
-    public List<CoinIdCard> getCoinSymbolWithPrice(@PathVariable String coinId){
-        return coinService.getCoinDataById();
+    public CoinIdCard getSingleCoinByIdFromCoingecko(@PathVariable String coinId){
+        return coinService.getCoinDataById(coinId);
     }
-
 
 }

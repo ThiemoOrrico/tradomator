@@ -1,40 +1,55 @@
 package com.tradomator.service.coingeckoapi;
 
-import com.tradomator.model.CoinIdCard;
 import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
-import com.tradomator.service.CoinService;
+import com.tradomator.model.coingeckoapi.CurrentPriceApi;
+import com.tradomator.model.coingeckoapi.ImageApi;
+import com.tradomator.model.coingeckoapi.MarketDataApi;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
 class CoingeckoApiServiceTest {
 
-    @MockBean
-    private CoingeckoApiService coinGeckoApiService;
+    private RestTemplate restTemplate = mock(RestTemplate.class);
 
-    @Autowired
-    private CoinService coinService;
+    private CoingeckoApiService coingeckoApiService = new CoingeckoApiService(restTemplate);
 
     @Test
-    void test_getCgeckoCoinInfoById_whenEmpty() {
-        // GIVEN
-        when(coinGeckoApiService.getCgeckoCoinInfoById()).thenReturn(new CgeckoApiCoin[]{});
+    void getSingleCoinByIdFromCoingecko_shouldReturnSingleCoinFromCoingeckoApi() {
+        //GIVEN
 
-        List<CoinIdCard> expected = List.of();
+        MarketDataApi marketDataApi1 = new MarketDataApi(new CurrentPriceApi(60000.12345f, 45000.54321f));
 
-        // WHEN
-        List<CoinIdCard> response = coinService.getCoinDataById();
+        LocalDateTime currentDateTime = LocalDateTime.now();
 
-        // THEN
-        assertEquals(expected, response);
+        CgeckoApiCoin cgeckoApiCoin1 = new CgeckoApiCoin();
+        cgeckoApiCoin1.setId("bitcoin");
+        cgeckoApiCoin1.setSymbol("btc");
+        cgeckoApiCoin1.setName("Bitcoin");
+        cgeckoApiCoin1.setMarketData(marketDataApi1);
+        cgeckoApiCoin1.setImage(new ImageApi("https:/fakeURL"));
+        cgeckoApiCoin1.setLastUpdated(currentDateTime);
+
+
+        when(restTemplate.getForEntity(
+                "https://api.coingecko.com/api/v3/coins/bitcoin",
+                CgeckoApiCoin.class)
+
+        ).thenReturn(ResponseEntity.ok(cgeckoApiCoin1));
+
+        //WHEN
+        CgeckoApiCoin actual = coingeckoApiService.getCgeckoCoinById("bitcoin");
+
+        //THEN
+        assertThat(actual, is(cgeckoApiCoin1));
+        verify(restTemplate).getForEntity("https://api.coingecko.com/api/v3/coins/bitcoin", CgeckoApiCoin.class);
 
     }
 }

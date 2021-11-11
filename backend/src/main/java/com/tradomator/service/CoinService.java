@@ -20,11 +20,15 @@ public class CoinService {
         this.coingeckoMapper = coingeckoMapper;
     }
 
-    public List<CoinIdCard> getCoinDataById() {
-        CgeckoApiCoin[] cgeckoApiCoins = coinGeckoApiService.getCgeckoCoinInfoById();
+    public CoinIdCard getCoinDataById(String coinId) {
+        CgeckoApiCoin cgeckoApiCoins = coinGeckoApiService.getCgeckoCoinById(coinId);
         return coingeckoMapper.mapToCoin(cgeckoApiCoins);
     }
 
+    public List<CoinIdCard> getAllCoinData() {
+        CgeckoApiCoin[] cgeckoApiCoins = coinGeckoApiService.getAllCgeckoCoinInfo();
+        return coingeckoMapper.mapToCoins(cgeckoApiCoins);
+    }
 
 }
 
