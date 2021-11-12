@@ -71,7 +71,8 @@ class CoinServiceTest {
 
         //THEN
         assertThat(actual, is(coinIdCard1));
-
+        verify(coingeckoApiService).getCgeckoCoinById(coinId);
+        verify(coingeckoMapper).mapToCoin(cgeckoApiCoin1);
     }
 
     @Test
@@ -130,6 +131,8 @@ class CoinServiceTest {
 
         //THEN
         assertThat(actual, is(List.of(coinIdCard1, coinIdCard2)));
+        verify(coingeckoApiService).getAllCgeckoCoinInfo();
+        verify(coingeckoMapper).mapToCoins(List.of(cgeckoApiCoin1, cgeckoApiCoin2));
 
     }
 
