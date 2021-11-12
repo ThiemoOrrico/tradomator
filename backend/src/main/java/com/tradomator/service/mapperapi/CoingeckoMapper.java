@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class CoingeckoMapper {
 
-    public List<CoinIdCard> mapToCoins(CgeckoApiCoin[] cgeckoApiCoins) {
+    public List<CoinIdCard> mapToCoins(List<CgeckoApiCoin> cgeckoApiCoins) {
         List<CoinIdCard> coinIdCards = new ArrayList<>();
 
         for (CgeckoApiCoin cgeckoApiCoin : cgeckoApiCoins) {
