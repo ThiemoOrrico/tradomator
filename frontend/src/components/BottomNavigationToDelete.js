@@ -22,9 +22,9 @@ function refreshMessages() {
 }
 
 export default function FixedBottomNavigation() {
-    const [value, setValue] = React.useState(0);
-    const ref = React.useRef(null);
-    const [messages, setMessages] = React.useState(() => refreshMessages());
+    const [value, setValue] = useState(0);
+    const ref = useRef(null);
+    const [messages, setMessages] = useState(() => refreshMessages());
 
     React.useEffect(() => {
         ref.current.ownerDocument.body.scrollTop = 0;
