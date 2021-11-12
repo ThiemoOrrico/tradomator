@@ -9,18 +9,14 @@ import com.tradomator.model.coingeckoapi.MarketDataApi;
 import com.tradomator.service.coingeckoapi.CoingeckoApiService;
 import com.tradomator.service.mapperapi.CoingeckoMapper;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import org.hamcrest.Matchers;
-import org.springframework.http.ResponseEntity;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
