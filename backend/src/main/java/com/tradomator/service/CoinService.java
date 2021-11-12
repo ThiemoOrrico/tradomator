@@ -6,6 +6,7 @@ import com.tradomator.service.coingeckoapi.CoingeckoApiService;
 import com.tradomator.service.mapperapi.CoingeckoMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -26,7 +27,7 @@ public class CoinService {
     }
 
     public List<CoinIdCard> getAllCoinData() {
-        CgeckoApiCoin[] cgeckoApiCoins = coinGeckoApiService.getAllCgeckoCoinInfo();
+        List<CgeckoApiCoin> cgeckoApiCoins = Arrays.asList(coinGeckoApiService.getAllCgeckoCoinInfo());
         return coingeckoMapper.mapToCoins(cgeckoApiCoins);
     }
 

@@ -122,7 +122,7 @@ class CoinServiceTest {
         coinIdCard1.setLastUpdated(currentDateTime);
 
 
-        when(coingeckoMapper.mapToCoins(new CgeckoApiCoin[] {cgeckoApiCoin1, cgeckoApiCoin2})).thenReturn(
+        when(coingeckoMapper.mapToCoins(List.of(cgeckoApiCoin1, cgeckoApiCoin2))).thenReturn(
                 List.of(coinIdCard1, coinIdCard2));
 
         //WHEN
