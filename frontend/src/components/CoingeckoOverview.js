@@ -1,20 +1,24 @@
-import CryptoCard from './CryptoCard'
-import styled from 'styled-components/macro'
+import {Box} from "@mui/material";
+import * as React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import List from "@mui/material/List";
+import CryptocardNew from "./CryptocardNew";
 
 
 export default function CoingeckoOverview({ coins }) {
 
+
     return (
-        <Wrapper>
-            {coins.map(coin => (
-                <CryptoCard key={coin.id} coinData={coin} />
-            ))}
-        </Wrapper>
+        <Box>
+            <CssBaseline/>
+            <List>
+
+                {coins.map(coin => (
+                    <CryptocardNew key={coin.id} coinData={coin}/>
+                ))}
+
+            </List>
+        </Box>
+
     )
 }
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 450px));
-  grid-gap: 10px;
-`
