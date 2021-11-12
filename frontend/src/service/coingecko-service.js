@@ -5,5 +5,5 @@ export const getMain = () => {
 }
 
 export const getById = coinId => {
-    return axios.get(`coingecko-api/${coinId}`).then(res => res.data)
+    return axios.get(`/coingecko-api/${coinId}`).then(res => res.data)
 }
