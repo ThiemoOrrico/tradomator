@@ -7,23 +7,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import Paper from '@mui/material/Paper';
 
-function refreshMessages() {
-    const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-    return Array.from(new Array(1)).map(
-        () => messageExamples[getRandomInt(messageExamples.length)],
-    );
-}
 
 export default function LowerButtonNavBar() {
+
     const [value, setValue] = React.useState(0);
     const ref = React.useRef(null);
-    const [messages, setMessages] = React.useState(() => refreshMessages());
-
-    React.useEffect(() => {
-        ref.current.ownerDocument.body.scrollTop = 0;
-        setMessages(refreshMessages());
-    }, [value, setMessages]);
 
     return (
         <Box sx={{ pb: 7 }} ref={ref}>
@@ -44,12 +33,3 @@ export default function LowerButtonNavBar() {
         </Box>
     );
 }
-
-const messageExamples = [
-    {
-        primary: 'Brunch this week?',
-        secondary: "I'll be in the neighbourhood this week. Let's grab a bite to eat",
-        person: '/static/images/avatar/5.jpg',
-    }
-
-];

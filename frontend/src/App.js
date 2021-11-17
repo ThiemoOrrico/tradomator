@@ -15,39 +15,36 @@ import WalletOverview from "./components/WalletOverview";
 export default function App() {
 
     const {wallet} = useWalletBalances()
-   const {coins} = useGeckoCoins()
+    const {coins} = useGeckoCoins()
 
 
     return (
 
-            <div>
+        <div>
 
-                <TopAppBar/>
+            <TopAppBar/>
 
-                <Box sx={{ width: '100%', mt: 8}}>
-                    <Switch>
-                    <Route exact path="/" >
-                        <CoingeckoOverview coins={coins} />
+            <Box sx={{width: '100%', mt: 8}}>
+                <Switch>
+                    <Route exact path="/">
+                        <CoingeckoOverview coins={coins}/>
 
                     </Route>
 
                     <Route path="/wallet">
-                        <p>Platzhalter für Wallet</p>
-
-
                         <WalletOverview wallet={wallet}/>
 
                     </Route>
 
                     <Route path="/login">
-                        <login />
+                        <login/>
                     </Route>
                 </Switch>
-                </Box>
+            </Box>
 
-                <LowerButtonNavBar/>
+            <LowerButtonNavBar/>
 
-            </div>
+        </div>
 
 
     );
