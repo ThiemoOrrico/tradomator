@@ -19,9 +19,11 @@ public class WalletController {
         this.walletservice = walletservice;
     }
 
+
     @GetMapping()
-    public List<Wallet> getWalletInfo(){
+    public Wallet getWalletInfo() {
         return walletservice.getWalletInfo();
     }
+}
 
 }
