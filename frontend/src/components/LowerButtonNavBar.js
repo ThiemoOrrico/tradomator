@@ -3,11 +3,9 @@ import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ArchiveIcon from '@mui/icons-material/Archive';
 import Paper from '@mui/material/Paper';
-
-
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 
 export default function LowerButtonNavBar() {
 
@@ -25,9 +23,9 @@ export default function LowerButtonNavBar() {
                         setValue(newValue);
                     }}
                 >
-                    <BottomNavigationAction label="Home" icon={<RestoreIcon />} />
-                    <BottomNavigationAction label="Spot" icon={<FavoriteIcon />} />
-                    <BottomNavigationAction label="Wallet" icon={<ArchiveIcon />} />
+                    <BottomNavigationAction label="Home" icon={<RestoreIcon href="/" />} />
+                    <BottomNavigationAction label="Spot Trading" icon={<TrendingUpIcon />} />
+                    <BottomNavigationAction label="Wallet" icon={<AccountBalanceWalletIcon href="/wallet" />} />
                 </BottomNavigation>
             </Paper>
         </Box>

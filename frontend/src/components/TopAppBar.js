@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import {AccountCircle} from "@material-ui/icons";
+import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
+
 
 export default function TopAppBar() {
     return (
@@ -32,11 +34,31 @@ export default function TopAppBar() {
                         <MenuIcon />
                     </IconButton>
 
-                    <Typography variant="h6" component="div" sx={{
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            p: 1,
+                            m: 1,
+                            bgcolor: 'primary.main',
+                        }}
+                    >
+
+                    <Typography variant="h5" component="div" sx={{
                         gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
                          }}>
-                        Placeholder Logo
+                        trad
                     </Typography>
+
+                       <SettingsTwoToneIcon fontSize="large"/>
+
+                        <Typography variant="h5" component="div" sx={{
+                            gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
+                        }}>
+                            mator
+                        </Typography>
+
+                    </Box>
 
                     <Button
 
