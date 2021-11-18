@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/wallet")
@@ -19,11 +17,9 @@ public class WalletController {
         this.walletservice = walletservice;
     }
 
-
     @GetMapping()
     public Wallet getWalletInfo() {
-        return walletservice.getWalletInfo();
+        return walletservice.getLatestWalletDocument();
     }
-}
 
 }

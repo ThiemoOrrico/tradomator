@@ -14,7 +14,7 @@ import java.util.List;
 public class Wallet {
 
     private String id;
-    private String updateTime;
+    private long updateTime;
     private List<Balance> balances;
 
 }
