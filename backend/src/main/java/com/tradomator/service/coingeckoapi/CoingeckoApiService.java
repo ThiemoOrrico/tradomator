@@ -1,6 +1,6 @@
 package com.tradomator.service.coingeckoapi;
 
-import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
+import com.tradomator.model.dto.coingeckoapi.CgeckoApiCoin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

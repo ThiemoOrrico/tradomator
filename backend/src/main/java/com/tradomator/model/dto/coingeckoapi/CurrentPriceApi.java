@@ -1,4 +1,4 @@
-package com.tradomator.model.coingeckoapi;
+package com.tradomator.model.dto.coingeckoapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

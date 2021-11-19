@@ -1,9 +1,9 @@
 package com.tradomator.service.coingeckoapi;
 
-import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
-import com.tradomator.model.coingeckoapi.CurrentPriceApi;
-import com.tradomator.model.coingeckoapi.ImageApi;
-import com.tradomator.model.coingeckoapi.MarketDataApi;
+import com.tradomator.model.dto.coingeckoapi.CgeckoApiCoin;
+import com.tradomator.model.dto.coingeckoapi.CurrentPriceApi;
+import com.tradomator.model.dto.coingeckoapi.ImageApi;
+import com.tradomator.model.dto.coingeckoapi.MarketDataApi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;

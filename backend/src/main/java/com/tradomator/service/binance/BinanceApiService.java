@@ -1,4 +1,4 @@
-package com.tradomator.api.binance;
+package com.tradomator.service.binance;
 
 import com.tradomator.model.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,20 +7,18 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.LocalDateTime;
-
 @Service
 public class BinanceApiService {
 
     private static final String BINANCE_API_TEST_URL = "https://testnet.binance.vision/api/v3/";
 
-    private static final String BINANCE_API_USER_URL = "https://testnet.binance.vision/api/v3/account?";
-
     private final RestTemplate restTemplate;
-
 
     @Value("${com.tradomator.wallet.binance.signature}")
     private String signature;
+
+    @Value("${com.tradomator.wallet.binance.apikey}")
+    private String apikey;
 
     @Autowired
     public BinanceApiService(RestTemplate restTemplate){
@@ -34,13 +32,12 @@ public class BinanceApiService {
         ResponseEntity<String> pingResponse= restTemplate.getForEntity(BINANCE_API_TEST_URL +"ping", String.class);
         return pingResponse.getStatusCode().equals(HttpStatus.OK);
 
-
         }
 
     public Wallet getAccountInfo (){
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("X-MBX-APIKEY", "2yZ97aPIeK99C2Jj6sFnR664PglFAPl4HmXAHSIMsyIGms1LGsPvJiXoHS8WQlVA");
+        headers.set("X-MBX-APIKEY", apikey);
 
         long timestamp = System.currentTimeMillis();
 

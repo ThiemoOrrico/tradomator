@@ -1,9 +1,9 @@
 package com.tradomator.service;
 
 import com.tradomator.model.CoinIdCard;
-import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
+import com.tradomator.model.dto.coingeckoapi.CgeckoApiCoin;
 import com.tradomator.service.coingeckoapi.CoingeckoApiService;
-import com.tradomator.service.mapperapi.CoingeckoMapper;
+import com.tradomator.mapper.CoingeckoMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

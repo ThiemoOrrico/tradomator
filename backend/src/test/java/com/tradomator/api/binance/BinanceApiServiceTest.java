@@ -1,5 +1,6 @@
 package com.tradomator.api.binance;
 
+import com.tradomator.service.binance.BinanceApiService;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
