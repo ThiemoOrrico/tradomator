@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
+import {AuthContext} from "../context/AuthProvider";
 
 const initialState = {
     username: "",
     password: ""
 }
 
-export default function Loginpage({login}) {
+export default function Loginpage() {
 
 const [credentials, setCrededtials] = useState(initialState);
-console.log(credentials)
+const {login} = useContext(AuthContext)
+
 
 const handleChange = event => {
     setCrededtials({...credentials, [event.target.name] : event.target.value})
