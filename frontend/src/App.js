@@ -7,7 +7,6 @@ import LowerButtonNavBar from "./components/LowerButtonNavBar";
 import CoingeckoOverview from "./components/CoingeckoOverview";
 import WalletOverview from "./components/WalletOverview";
 import Loginpage from "./pages/Loginpage";
-import AuthProvider from "./context/AuthProvider";
 
 
 export default function App() {
@@ -21,7 +20,6 @@ export default function App() {
     return (
 
         <div>
-<AuthProvider>
             <TopAppBar/>
 
             <Box sx={{width: '100%', mt: 8}}>
@@ -45,7 +43,6 @@ export default function App() {
             </Box>
 
             <LowerButtonNavBar/>
-</AuthProvider>
         </div>
 
 

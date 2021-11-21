@@ -6,16 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import {
     BrowserRouter as Router
 } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Router>
-      <App />
-      </Router>
+    <React.StrictMode>
+        <Router>
+            <AuthProvider>
+                <App/>
+            </AuthProvider>
+        </Router>
 
-  </React.StrictMode>,
-  document.getElementById('root')
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
