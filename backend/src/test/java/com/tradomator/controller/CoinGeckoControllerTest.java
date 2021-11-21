@@ -41,8 +41,9 @@ class CoinGeckoControllerTest {
 
     @Test
     void getSingleCoinByIdFromCoingecko_shouldReturnSingleCoinFromCoingeckoApi() {
+
         //GIVEN
-        String url = ("http://localhost:" + port + "/coingecko-api/bitcoin");
+        String url = ("http://localhost:" + port + "/api/coin/bitcoin");
 
         MarketDataApi marketDataApi1 = new MarketDataApi(new CurrentPriceApi(60000.12345f, 45000.54321f));
 
