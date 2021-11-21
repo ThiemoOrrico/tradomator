@@ -3,7 +3,7 @@ import {Box} from "@mui/material";
 import TopAppBar from "./components/TopAppBar";
 import useGeckoCoins from "./hooks/useGeckoCoins";
 import useWalletBalances from "./hooks/useWalletBalances"
-import LowerButtonNavBar from "./components/LowerButtonNavBar";
+import BottomNavBar from "./components/BottomNavBar";
 import CoingeckoOverview from "./components/CoingeckoOverview";
 import WalletOverview from "./components/WalletOverview";
 import Loginpage from "./pages/Loginpage";
@@ -28,12 +28,10 @@ export default function App() {
 
                     <Route exact path="/">
                         <CoingeckoOverview coins={coins}/>
-
                     </Route>
 
                     <PrivateRoute path="/wallet">
                         <WalletOverview wallet={wallet}/>
-
                     </PrivateRoute>
 
                     <Route path="/login">
@@ -43,7 +41,7 @@ export default function App() {
                 </Switch>
             </Box>
 
-            <LowerButtonNavBar/>
+            <BottomNavBar/>
         </div>
 
 

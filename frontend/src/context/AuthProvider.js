@@ -15,7 +15,7 @@ export default function AuthProvider({ children }) {
             .post('/auth/login', credentials)
             .then(res => res.data)
             .then(setToken)
-            .then(() => history.push('/'))
+            .then(() => history.push('/wallet'))
             .catch(error => console.error(error.message))
     }
 
