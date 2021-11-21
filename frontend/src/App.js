@@ -7,6 +7,7 @@ import LowerButtonNavBar from "./components/LowerButtonNavBar";
 import CoingeckoOverview from "./components/CoingeckoOverview";
 import WalletOverview from "./components/WalletOverview";
 import Loginpage from "./pages/Loginpage";
+import PrivateRoute from "./routing/PrivateRoute";
 
 
 export default function App() {
@@ -30,10 +31,10 @@ export default function App() {
 
                     </Route>
 
-                    <Route path="/wallet">
+                    <PrivateRoute path="/wallet">
                         <WalletOverview wallet={wallet}/>
 
-                    </Route>
+                    </PrivateRoute>
 
                     <Route path="/login">
                         <Loginpage/>
