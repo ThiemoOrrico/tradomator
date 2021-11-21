@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Switch,
-    Route
+    Route, useHistory
 } from "react-router-dom";
 import {Box} from "@mui/material";
 import TopAppBar from "./components/TopAppBar";
@@ -10,13 +10,25 @@ import useWalletBalances from "./hooks/useWalletBalances"
 import LowerButtonNavBar from "./components/LowerButtonNavBar";
 import CoingeckoOverview from "./components/CoingeckoOverview";
 import WalletOverview from "./components/WalletOverview";
+import Loginpage from "./pages/Loginpage";
+import axios from "axios";
 
 
 export default function App() {
 
-    const {wallet} = useWalletBalances()
-    const {coins} = useGeckoCoins()
+    const [token, setToken] = useState()
 
+    const {wallet} = useWalletBalances(token)
+    const {coins} = useGeckoCoins()
+    const history = useHistory();
+
+    const login = (credentials) => {
+        axios.post("/auth/login", credentials)
+            .then(res => res.data)
+            .then(setToken)
+            .then( () => history.push("/wallet"))
+            .catch(error => console.error(error.message))
+    }
 
     return (
 
@@ -26,6 +38,7 @@ export default function App() {
 
             <Box sx={{width: '100%', mt: 8}}>
                 <Switch>
+
                     <Route exact path="/">
                         <CoingeckoOverview coins={coins}/>
 
@@ -37,8 +50,9 @@ export default function App() {
                     </Route>
 
                     <Route path="/login">
-                        <login/>
+                        <Loginpage login={login}/>
                     </Route>
+
                 </Switch>
             </Box>
 
