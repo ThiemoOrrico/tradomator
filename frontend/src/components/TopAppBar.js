@@ -29,7 +29,7 @@ export default function TopAppBar() {
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{gridArea: 'headerLeft',justifyContent: "flex-start" , bgcolor: 'primary.main', mr: 2 }}
+                        sx={{gridArea: 'headerLeft',justifyContent: "flex-start", mr: 2 }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -39,13 +39,12 @@ export default function TopAppBar() {
                             display: 'flex',
                             justifyContent: 'center',
                             p: 1,
-                            m: 1,
-                            bgcolor: 'primary.main',
+                            m: 1
                         }}
                     >
 
                     <Typography variant="h5" component="div" sx={{
-                        gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
+                        gridArea: 'headerCenter', justifyContent: "flex-end"
                          }}>
                         trad
                     </Typography>
@@ -53,7 +52,7 @@ export default function TopAppBar() {
                        <SettingsTwoToneIcon fontSize="large"/>
 
                         <Typography variant="h5" component="div" sx={{
-                            gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
+                            gridArea: 'headerCenter', justifyContent: "flex-end"
                         }}>
                             mator
                         </Typography>
@@ -68,7 +67,7 @@ export default function TopAppBar() {
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
                         color="inherit"
-                        sx={{gridArea: 'headerRight', justifyContent:'flex-end' ,bgcolor: 'primary.main'}}
+                        sx={{gridArea: 'headerRight', justifyContent:'flex-end'}}
 
                     >
                         <AccountCircle />

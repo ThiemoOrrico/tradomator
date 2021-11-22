@@ -7,16 +7,19 @@ import {
     BrowserRouter as Router
 } from "react-router-dom";
 import AuthProvider from "./context/AuthProvider";
+import {ThemeProvider} from "@mui/styles";
+import theme from "./styling/theme";
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <AuthProvider>
-                <App/>
-            </AuthProvider>
-        </Router>
-
+        <ThemeProvider theme={theme}>
+            <Router>
+                <AuthProvider>
+                    <App/>
+                </AuthProvider>
+            </Router>
+        </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

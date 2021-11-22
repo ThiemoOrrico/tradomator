@@ -17,33 +17,36 @@ export default function App() {
     const {coins} = useGeckoCoins()
 
 
-
     return (
 
-        <div>
-            <TopAppBar/>
+            <div>
+                <TopAppBar/>
 
-            <Box sx={{width: '100%', mt: 8}}>
-                <Switch>
+                <Box sx={{
+                    width: '100%',
+                    mt: 8,
+                    bgcolor: 'primary.dark'
+                }}
+                >
+                    <Switch>
 
-                    <Route exact path="/">
-                        <CoingeckoOverview coins={coins}/>
-                    </Route>
+                        <Route exact path="/">
+                            <CoingeckoOverview coins={coins}/>
+                        </Route>
 
-                    <PrivateRoute path="/wallet">
-                        <WalletOverview wallet={wallet}/>
-                    </PrivateRoute>
+                        <PrivateRoute path="/wallet">
+                            <WalletOverview wallet={wallet}/>
+                        </PrivateRoute>
 
-                    <Route path="/login">
-                        <Loginpage/>
-                    </Route>
+                        <Route path="/login">
+                            <Loginpage/>
+                        </Route>
 
-                </Switch>
-            </Box>
+                    </Switch>
+                </Box>
 
-            <BottomNavBar/>
-        </div>
-
+                <BottomNavBar/>
+            </div>
 
     );
 }

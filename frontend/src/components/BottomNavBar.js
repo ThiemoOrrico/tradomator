@@ -12,20 +12,22 @@ export default function BottomNavBar() {
     const [value, setValue] = React.useState(0);
     const ref = React.useRef(null);
 
+    const handleChange = (event, value) => {
+        setValue(value);
+    };
+
     return (
         <Box sx={{ pb: 7 }} ref={ref}>
 
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
                 <BottomNavigation
                     showLabels
                     value={value}
-                    onChange={(event, newValue) => {
-                        setValue(newValue);
-                    }}
+                    onChange={handleChange}
                 >
-                    <BottomNavigationAction label="Home" icon={<RestoreIcon  />} href="/"/>
-                    <BottomNavigationAction label="Spot Trading" icon={<TrendingUpIcon />} />
-                    <BottomNavigationAction label="Wallet" icon={<AccountBalanceWalletIcon  />} href="/wallet"/>
+                    <BottomNavigationAction  label="Home" icon={<RestoreIcon  />} href="/"/>
+                    <BottomNavigationAction  label="Spot Trading" icon={<TrendingUpIcon />} />
+                    <BottomNavigationAction  label="Wallet" icon={<AccountBalanceWalletIcon  />} href="/wallet"/>
                 </BottomNavigation>
             </Paper>
         </Box>
