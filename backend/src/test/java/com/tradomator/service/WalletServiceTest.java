@@ -29,7 +29,7 @@ class WalletServiceTest {
                 new Balance("BNB", "120.321", "0.0000"),
                 new Balance("BTC", "10.21", "0.0000")));
 
-        when(walletRepo.findTopByOrderByUpdateTimeDesc()).thenReturn(walletTestDtoLatest);
+        when(walletRepo.findTopByOrderByUpdateTimeDesc()).thenReturn(Optional.of(walletTestDtoLatest));
 
         //WHEN
         Wallet actual = walletService.getLatestWalletDocument();
