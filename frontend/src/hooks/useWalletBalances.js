@@ -5,17 +5,17 @@ import {getWallet} from "../service/binance-wallet-service";
 export default  function useWalletBalances(){
     const [wallet, setWallet] = useState({})
 
-    const getWalletBalances = () =>{
+    const getWalletBalance = () =>{
         getWallet()
             .then(setWallet)
             .catch(console.error)
     }
 
     useEffect( () => {
-        getWalletBalances()
+        getWalletBalance()
     }, [])
 
 
 
-    return { wallet,setWallet, getWalletBalances}
+    return { wallet,setWallet, getWalletBalances: getWalletBalance}
 }
