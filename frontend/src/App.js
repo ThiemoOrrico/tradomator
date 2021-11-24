@@ -1,52 +1,48 @@
 import {Switch, Route} from "react-router-dom";
 import {Box} from "@mui/material";
 import TopAppBar from "./components/TopAppBar";
-import useGeckoCoins from "./hooks/useGeckoCoins";
-import useWalletBalances from "./hooks/useWalletBalances"
 import BottomNavBar from "./components/BottomNavBar";
-import CoingeckoOverview from "./components/CoingeckoOverview";
-import WalletOverview from "./components/WalletOverview";
 import Loginpage from "./pages/Loginpage";
 import PrivateRoute from "./routing/PrivateRoute";
+import Homepage from "./pages/Homepage";
+import Walletpage from "./pages/Walletpage";
+import theme from "./styling/theme";
+import {ThemeProvider} from "@emotion/react";
+import {CssBaseline} from "@material-ui/core";
 
 
 export default function App() {
-
-
-    const {wallet} = useWalletBalances()
-    const {coins} = useGeckoCoins()
-
-
     return (
-
+        <ThemeProvider theme={theme}>
             <div>
+                <CssBaseline/>
                 <TopAppBar/>
 
                 <Box sx={{
                     width: '100%',
-                    mt: 8,
-                    bgcolor: 'primary.dark'
+                    mt: 8
                 }}
                 >
                     <Switch>
-
                         <Route exact path="/">
-                            <CoingeckoOverview coins={coins}/>
+                            <Homepage/>
+                        </Route>
+
+                        <Route exact path="/home">
+                            <Homepage/>
                         </Route>
 
                         <PrivateRoute path="/wallet">
-                            <WalletOverview wallet={wallet}/>
+                            <Walletpage/>
                         </PrivateRoute>
 
                         <Route path="/login">
                             <Loginpage/>
                         </Route>
-
                     </Switch>
                 </Box>
-
                 <BottomNavBar/>
             </div>
-
+        </ThemeProvider>
     );
 }

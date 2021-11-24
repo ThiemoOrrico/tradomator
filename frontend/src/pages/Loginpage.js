@@ -14,7 +14,6 @@ export default function Loginpage() {
     const [credentials, setCrededtials] = useState(initialState);
     const {login} = useContext(AuthContext)
 
-
     const handleChange = event => {
         setCrededtials({...credentials, [event.target.name] : event.target.value})
     }
@@ -25,10 +24,8 @@ export default function Loginpage() {
     }
 
     return (
-
+        <form onSubmit={handleSubmit}>
         <Box
-            component="form"
-            onSubmit={handleSubmit}
             sx={{
                 '& > :not(style)': { m: 1, width: '25ch' },
             }}
@@ -53,14 +50,9 @@ export default function Loginpage() {
                 onChange={handleChange}
             />
 
-            <Button  onClick={handleSubmit} variant= "outlined">Login</Button>
-
+            <Button type="submit" onClick={handleSubmit} variant= "outlined">Login</Button>
         </Box>
-
-
-
-
-
+        </form>
     )
 };
 

@@ -6,28 +6,31 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import Paper from '@mui/material/Paper';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import {useHistory} from "react-router-dom";
+
 
 export default function BottomNavBar() {
 
-    const [value, setValue] = React.useState(0);
-    const ref = React.useRef(null);
+    let history = useHistory();
 
-    const handleChange = (event, value) => {
-        setValue(value);
-    };
+    const [currentRoute, setCurrentRoute] = React.useState("home"); //value = route
+
+    const handleChange = (event, value) => { setCurrentRoute(value) }
+    const handleWalletClick = () => { history.push("/wallet") }
+    const handleHomeClick = () => { history.push("/home") }
 
     return (
-        <Box sx={{ pb: 7 }} ref={ref}>
+        <Box sx={{pb: 7}} >
 
-            <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0}} elevation={3}>
                 <BottomNavigation
                     showLabels
-                    value={value}
+                    value={currentRoute}
                     onChange={handleChange}
                 >
-                    <BottomNavigationAction  label="Home" icon={<RestoreIcon  />} href="/"/>
-                    <BottomNavigationAction  label="Spot Trading" icon={<TrendingUpIcon />} />
-                    <BottomNavigationAction  label="Wallet" icon={<AccountBalanceWalletIcon  />} href="/wallet"/>
+                    <BottomNavigationAction value="home" label="Home" icon={<RestoreIcon />} onClick={ ()=> handleHomeClick()}/>
+                    <BottomNavigationAction value="spotTrading" label="Spot Trading" icon={<TrendingUpIcon/>}/>
+                    <BottomNavigationAction value="wallet" label="Wallet" icon={<AccountBalanceWalletIcon/>} onClick={ handleWalletClick}/>
                 </BottomNavigation>
             </Paper>
         </Box>

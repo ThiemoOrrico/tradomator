@@ -2,36 +2,53 @@ import {createTheme} from "@mui/material";
 
 const theme = createTheme({
   palette: {
-    type: 'standard',
+    type: 'dark',
+
     primary: {
-      main: '#3f51b5',
-      light: '#6573c3',
-      dark: '#2c387e',
+      main: '#596081',
+      light: '#8a8e9f',
+      dark: '#c9be84',
       contrastText: '#ffffff',
     },
-    secondary: {
-      main: '#f50057',
-      light: '#f73378',
-      dark: '#ab003c',
-      contrastText: '#ffffff',
-    },
+
     background: {
-      default: '#303030',
-      paper: '#424242',
+      default: '#232c42',
+      paper: '#2e3a52',
     },
+
     text: {
       primary: '#ffffff',
       secondary: 'rgba(255,255,255,0.7)',
       disabled: 'rgba(255,255,255,0.5)',
       hint: 'rgba(255,255,255,0.5)',
     },
-    error: {
-      main: '#f44336',
-      light: '#f6685e',
-      dark: '#aa2e25',
-      contrastText: '#ffffff',
+
+  },
+
+  components: {
+    MuiDiv: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "green"
+        }
+      }
+    }
+  },
+
+  overrides: {
+    MuiAppBar: {
+      colorInherit: {
+        backgroundColor: '#efefef',
+        color: '#fff',
+      },
     },
   },
-})
+  props: {
+    MuiAppBar: {
+      color: 'inherit',
+    },
+  },
+
+});
 
 export default theme;
