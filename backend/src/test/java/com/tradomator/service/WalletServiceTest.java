@@ -21,16 +21,7 @@ class WalletServiceTest {
     @DisplayName("Test_should_Return_LatestWallet")
     void getLatestWalletDocumentTest_should_Return_LatestWallet(){
 
-
         //GIVEN
-        Wallet walletTestDtoOld = new Wallet();
-        walletTestDtoOld.setId("any ID created by DB");
-        walletTestDtoOld.setUpdateTime(54320);
-        walletTestDtoOld.setBalances(List.of(
-                new Balance("BNB", "123.321", "0.0000"),
-                new Balance("BTC", "12.21", "0.0000"))
-                );
-
         Wallet walletTestDtoLatest = new Wallet();
         walletTestDtoLatest.setId("any ID created by DB");
         walletTestDtoLatest.setUpdateTime(54323);
@@ -38,14 +29,13 @@ class WalletServiceTest {
                 new Balance("BNB", "120.321", "0.0000"),
                 new Balance("BTC", "10.21", "0.0000")));
 
-
-        when(walletRepo.findAll()).thenReturn(List.of(walletTestDtoLatest, walletTestDtoOld));
+        when(walletRepo.findTopByOrderByUpdateTimeDesc()).thenReturn(walletTestDtoLatest);
 
         //WHEN
         Wallet actual = walletService.getLatestWalletDocument();
 
         //THEN
-        verify(walletRepo).findAll();
+        verify(walletRepo).findTopByOrderByUpdateTimeDesc();
         assertThat(actual, is(walletTestDtoLatest));
     }
 }

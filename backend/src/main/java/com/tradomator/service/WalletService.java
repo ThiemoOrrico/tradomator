@@ -2,39 +2,25 @@ package com.tradomator.service;
 
 import com.tradomator.model.Wallet;
 import com.tradomator.repo.WalletRepo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@RequiredArgsConstructor
 public class WalletService {
 
     private final WalletRepo walletRepo;
 
-
-    public WalletService(WalletRepo walletRepo) {
-        this.walletRepo = walletRepo;
-
-    }
-
-
     public Wallet getLatestWalletDocument() {
-        List<Wallet> all = walletRepo.findAll();
+        Wallet latestWallet = walletRepo.findTopByOrderByUpdateTimeDesc();
 
-        if(all.isEmpty()){
-            throw new NoSuchElementException("No wallets in DB found!");
+        if (latestWallet.getId().isEmpty()) {
+            throw new NoSuchElementException("Wallet Id is not set or no wallets in DB found!");
+        } else {
+            return latestWallet;
         }
-
-        Wallet latestWallet = null;
-        long max = 0;
-        for ( Wallet wallet : all){
-            if( wallet.getUpdateTime() > max ){
-                max = wallet.getUpdateTime();
-                latestWallet = wallet;
-            }
-        }
-        return latestWallet;
     }
 }
 
