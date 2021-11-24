@@ -2,10 +2,10 @@ package com.tradomator.controller;
 
 import com.tradomator.model.CoinIdCard;
 import com.tradomator.model.CurrentPrice;
-import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
-import com.tradomator.model.coingeckoapi.CurrentPriceApi;
-import com.tradomator.model.coingeckoapi.ImageApi;
-import com.tradomator.model.coingeckoapi.MarketDataApi;
+import com.tradomator.model.dto.coingeckoapi.CgeckoApiCoin;
+import com.tradomator.model.dto.coingeckoapi.CurrentPriceApi;
+import com.tradomator.model.dto.coingeckoapi.ImageApi;
+import com.tradomator.model.dto.coingeckoapi.MarketDataApi;
 import com.tradomator.service.coingeckoapi.CoingeckoApiService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 

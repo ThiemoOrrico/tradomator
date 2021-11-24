@@ -1,4 +1,4 @@
-package com.tradomator.model.coingeckoapi;
+package com.tradomator.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class CurrentPriceApi {
+public class Balance {
 
-    private float usd;
-    private float eur;
+    private String asset;
+    private String free;
+    private String locked;
+
 }

@@ -6,40 +6,45 @@ import {
 import {Box} from "@mui/material";
 import TopAppBar from "./components/TopAppBar";
 import useGeckoCoins from "./hooks/useGeckoCoins";
+import useWalletBalances from "./hooks/useWalletBalances"
 import LowerButtonNavBar from "./components/LowerButtonNavBar";
 import CoingeckoOverview from "./components/CoingeckoOverview";
+import WalletOverview from "./components/WalletOverview";
 
 
 export default function App() {
 
-   const {coins} = useGeckoCoins()
+    const {wallet} = useWalletBalances()
+    const {coins} = useGeckoCoins()
+
 
     return (
 
-            <div>
+        <div>
 
-                <TopAppBar/>
+            <TopAppBar/>
 
-                <Box sx={{ width: '100%' , maxHeight: 8/10}}>
-                    <Switch>
-                    <Route exact path="/" >
-                        <CoingeckoOverview coins={coins} />
+            <Box sx={{width: '100%', mt: 8}}>
+                <Switch>
+                    <Route exact path="/">
+                        <CoingeckoOverview coins={coins}/>
 
                     </Route>
 
-                    <Route path="/Wallet">
-                        <wallet />
+                    <Route path="/wallet">
+                        <WalletOverview wallet={wallet}/>
+
                     </Route>
 
-                    <Route path="/Login">
-                        <login />
+                    <Route path="/login">
+                        <login/>
                     </Route>
                 </Switch>
-                </Box>
+            </Box>
 
-                <LowerButtonNavBar/>
+            <LowerButtonNavBar/>
 
-            </div>
+        </div>
 
 
     );

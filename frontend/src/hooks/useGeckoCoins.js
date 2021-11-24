@@ -9,6 +9,7 @@ export default function useGeckoCoins() {
         getMain()
             .then(setCoins)
             .catch(error => toast(error.message))
+
     }
 
     useEffect(() => {

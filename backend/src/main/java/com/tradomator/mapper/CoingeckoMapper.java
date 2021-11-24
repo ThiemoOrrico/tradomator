@@ -1,8 +1,8 @@
-package com.tradomator.service.mapperapi;
+package com.tradomator.mapper;
 
 import com.tradomator.model.CoinIdCard;
 import com.tradomator.model.CurrentPrice;
-import com.tradomator.model.coingeckoapi.CgeckoApiCoin;
+import com.tradomator.model.dto.coingeckoapi.CgeckoApiCoin;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
