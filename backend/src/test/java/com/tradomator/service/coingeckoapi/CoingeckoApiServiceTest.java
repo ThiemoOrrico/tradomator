@@ -6,6 +6,7 @@ import com.tradomator.model.dto.coingeckoapi.ImageApi;
 import com.tradomator.model.dto.coingeckoapi.MarketDataApi;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -34,7 +35,7 @@ class CoingeckoApiServiceTest {
         cgeckoApiCoin1.setSymbol("btc");
         cgeckoApiCoin1.setName("Bitcoin");
         cgeckoApiCoin1.setMarketData(marketDataApi1);
-        cgeckoApiCoin1.setImage(new ImageApi("https:/fakeURL"));
+        cgeckoApiCoin1.setImage(new ImageApi("https://fakeURL"));
         cgeckoApiCoin1.setLastUpdated(currentDateTime);
 
 
@@ -42,7 +43,7 @@ class CoingeckoApiServiceTest {
                 "https://api.coingecko.com/api/v3/coins/bitcoin",
                 CgeckoApiCoin.class)
 
-        ).thenReturn(ResponseEntity.ok(cgeckoApiCoin1));
+        ).thenReturn(new ResponseEntity<>(cgeckoApiCoin1, HttpStatus.OK));
 
         //WHEN
         CgeckoApiCoin actual = coingeckoApiService.getCgeckoCoinById("bitcoin");
