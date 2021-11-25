@@ -5,6 +5,7 @@ name: Java CI with Maven
 
 on:
   push:
+  workflow_dispatch: # now you can start your workflow from the actions tab
 
 jobs:
   build:
