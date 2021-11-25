@@ -25,4 +25,4 @@ jobs:
       with:
         mongodb-version: '5.0'
     - name: Build with Maven
-      run: mvn -B package --file backend/pom.xml -DargLine=„-USER_SECRET={ $USER_SECRET }“
+      run: mvn -B package --file backend/pom.xml
