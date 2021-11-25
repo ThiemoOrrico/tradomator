@@ -6,16 +6,15 @@ import Loginpage from "./pages/Loginpage";
 import PrivateRoute from "./routing/PrivateRoute";
 import Homepage from "./pages/Homepage";
 import Walletpage from "./pages/Walletpage";
-import theme from "./styling/theme";
-import {ThemeProvider} from "@emotion/react";
 import {CssBaseline} from "@material-ui/core";
+import styled from "styled-components/macro";
 
 
 export default function App() {
     return (
-        <ThemeProvider theme={theme}>
-            <div>
+            <PageLayout >
                 <CssBaseline/>
+
                 <TopAppBar/>
 
                 <Box sx={{
@@ -42,7 +41,17 @@ export default function App() {
                     </Switch>
                 </Box>
                 <BottomNavBar/>
-            </div>
-        </ThemeProvider>
+            </PageLayout>
     );
 }
+const PageLayout = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr min-content;
+  background-color: #2c4470;
+
+`

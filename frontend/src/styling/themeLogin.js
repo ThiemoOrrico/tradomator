@@ -1,6 +1,6 @@
 import {createTheme} from "@mui/material";
 
-const themeAppBar = createTheme({
+const themeLogin = createTheme({
 
     palette: {
         type: 'dark',
@@ -18,4 +18,4 @@ const themeAppBar = createTheme({
     },
 });
 
-export default themeAppBar;
+export default themeLogin;

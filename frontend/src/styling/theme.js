@@ -5,15 +5,14 @@ const theme = createTheme({
     type: 'dark',
 
     primary: {
-      main: '#596081',
-      light: '#8a8e9f',
-      dark: '#c9be84',
+      main: '#566185',
+
       contrastText: '#ffffff',
     },
 
     background: {
-      default: '#232c42',
-      paper: '#2e3a52',
+      default: '#2c4470',
+      paper: '#566185',
     },
 
     text: {
@@ -23,31 +22,7 @@ const theme = createTheme({
       hint: 'rgba(255,255,255,0.5)',
     },
 
-  },
-
-  components: {
-    MuiDiv: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "green"
-        }
-      }
-    }
-  },
-
-  overrides: {
-    MuiAppBar: {
-      colorInherit: {
-        backgroundColor: '#efefef',
-        color: '#fff',
-      },
-    },
-  },
-  props: {
-    MuiAppBar: {
-      color: 'inherit',
-    },
-  },
+  }
 
 });
 

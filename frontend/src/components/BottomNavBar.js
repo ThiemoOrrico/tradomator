@@ -27,6 +27,12 @@ export default function BottomNavBar() {
                     showLabels
                     value={currentRoute}
                     onChange={handleChange}
+                    sx={{
+                        "& .Mui-selected, .Mui-selected > svg": {
+                            color: "#80b61e"
+                        }
+                    }}
+
                 >
                     <BottomNavigationAction value="home" label="Home" icon={<RestoreIcon />} onClick={ ()=> handleHomeClick()}/>
                     <BottomNavigationAction value="spotTrading" label="Spot Trading" icon={<TrendingUpIcon/>}/>
