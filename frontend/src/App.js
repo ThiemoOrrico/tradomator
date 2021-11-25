@@ -45,13 +45,5 @@ export default function App() {
     );
 }
 const PageLayout = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: min-content min-content 1fr min-content;
-  background-color: #2c4470;
-
+   background-color: #2c4470;
 `

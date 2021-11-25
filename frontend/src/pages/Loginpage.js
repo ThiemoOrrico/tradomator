@@ -3,8 +3,6 @@ import {AuthContext} from "../context/AuthProvider";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import {ThemeProvider} from "@mui/styles";
-import themeLogin from "../styling/themeLogin";
 
 const initialState = {
     username: "",
@@ -26,16 +24,13 @@ export default function Loginpage() {
     }
 
     return (
-        <ThemeProvider theme={themeLogin}>
             <form onSubmit={handleSubmit}>
                 <Box
                     sx={{
-                        '& > :not(style)': {m: 1, width: '25ch'},
-
-                        display: 'grid',
-                        gridTemplateColumns: 'auto',
-                        gridTemplateRows: 'repeat(3, 3fr)',
-                        gridTemplateAreas: `"userName passWord buttoN"`,
+                        '& > :not(style)': {mt: 2, width: '30ch'},
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
                     }}
 
 
@@ -48,7 +43,7 @@ export default function Loginpage() {
                         value={credentials.username}
                         required={true}
                         onChange={handleChange}
-                        sx={{gridArea: 'userName', justifyContent: "flex-start", mr: 2}}
+
                     />
 
                     <TextField
@@ -59,14 +54,13 @@ export default function Loginpage() {
                         value={credentials.password}
                         required={true}
                         onChange={handleChange}
-                        sx={{gridArea: 'passWord',  mr: 2}}
+
                     />
-                    <Box  sx={{gridArea: 'buttoN',  mr: 2}}>
-                        <Button type="submit" onClick={handleSubmit} variant="outlined">Login</Button>
-                    </Box>
+
+                    <Button type="submit" onClick={handleSubmit} variant="outlined">Login</Button>
+
                 </Box>
             </form>
-        </ThemeProvider>
     )
 };
 
