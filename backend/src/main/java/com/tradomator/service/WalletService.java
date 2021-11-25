@@ -15,8 +15,8 @@ public class WalletService {
 
     public Wallet getLatestWalletDocument() {
 
-        return walletRepo.findTopByOrderByUpdateTimeDesc().orElseThrow(
-                () -> new NoSuchElementException("Wallet Id is not set or no wallets in DB found!"));
+        return walletRepo.findTopByOrderByUpdateTimeDesc()
+                .orElseThrow(() -> new NoSuchElementException("Wallet Id is not set or no wallets in DB found!"));
     }
 }
 

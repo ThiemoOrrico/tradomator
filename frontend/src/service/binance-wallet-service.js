@@ -1,9 +1,16 @@
 import axios from "axios";
 
-export const getWallet = () => {
+const getHeader = (token) => {
+
+    return {
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+    }
+}
+
+export const getWallet = (token) => {
     return axios
-        .get('/api/wallet')
+        .get('/api/wallet', getHeader(token))
         .then(res => res.data)
-
-
 }

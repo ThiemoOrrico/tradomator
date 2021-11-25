@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface WalletRepo extends MongoRepository<Wallet, String>{
-    Optional<Wallet> findTopByOrderByUpdateTimeDesc();
+   Optional<Wallet> findTopByOrderByUpdateTimeDesc();
 }

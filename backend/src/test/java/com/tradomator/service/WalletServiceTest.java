@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -29,7 +30,7 @@ class WalletServiceTest {
                 new Balance("BNB", "120.321", "0.0000"),
                 new Balance("BTC", "10.21", "0.0000")));
 
-        when(walletRepo.findTopByOrderByUpdateTimeDesc()).thenReturn(java.util.Optional.of(walletTestDtoLatest));
+        when(walletRepo.findTopByOrderByUpdateTimeDesc()).thenReturn(Optional.of(walletTestDtoLatest));
 
         //WHEN
         Wallet actual = walletService.getLatestWalletDocument();

@@ -5,6 +5,7 @@ name: Java CI with Maven
 
 on:
   push:
+  workflow_dispatch: # now you can start your workflow from the actions tab
 
 jobs:
   build:
@@ -19,5 +20,9 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.6.0
+      with:
+        mongodb-version: '5.0'
     - name: Build with Maven
       run: mvn -B package --file backend/pom.xml
