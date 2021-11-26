@@ -9,9 +9,9 @@ export default function CryptocardNew({coinData}) {
 
         <ListItem sx={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gridTemplateRows: 'auto',
-            gridTemplateAreas: `"headerLeft headerCenter headerRight"`,
+            ml: 1,
         }}>
 
             <ListItemAvatar>
@@ -20,6 +20,10 @@ export default function CryptocardNew({coinData}) {
 
 
             <ListItemText
+                sx={{
+                    textAlign: "left",
+                    alignItems:"left",
+                }}
                 primary={coinData?.symbol}
                 secondary={coinData?.id}
             />
@@ -35,7 +39,6 @@ export default function CryptocardNew({coinData}) {
                 }).format(coinData?.currentPrice?.usd)}
             />
 
-            <ListItemText secondary='placeholder 24h'/>
 
         </ListItem>
 

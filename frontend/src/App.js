@@ -45,5 +45,5 @@ export default function App() {
     );
 }
 const PageLayout = styled.div`
-   background-color: #2c4470;
+  background-color: #2c4470;
 `

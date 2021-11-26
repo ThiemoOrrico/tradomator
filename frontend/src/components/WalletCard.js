@@ -5,7 +5,14 @@ import ListItemText from '@mui/material/ListItemText';
 export default function WalletCard({balance}) {
     return (
 
-        <ListItem >
+        <ListItem  sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateRows: 'auto',
+            ml:2,
+
+        }}>
+
 
             <ListItemText
                 primary={balance?.asset}
@@ -13,10 +20,6 @@ export default function WalletCard({balance}) {
 
             <ListItemText
                 primary={balance?.free}
-            />
-
-            <ListItemText
-                primary={balance?.locked}
             />
 
 
