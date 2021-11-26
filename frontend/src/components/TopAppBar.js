@@ -9,77 +9,69 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {AccountCircle} from "@material-ui/icons";
 import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
 
-
 export default function TopAppBar() {
     return (
-        <Box sx={{ flexGrow: 1
-        }}>
-            <AppBar >
+            <Box sx={{
+                flexGrow: 1
+            }}>
 
-                <Toolbar sx={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gridTemplateRows: 'auto',
-                    gridTemplateAreas: `"headerLeft headerCenter headerRight"`,
+                <AppBar>
+                    <Toolbar sx={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(3, 1fr)',
+                        gridTemplateRows: 'auto',
+                        gridTemplateAreas: `"headerLeft headerCenter headerRight"`,
 
-                }}
-                >
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{gridArea: 'headerLeft',justifyContent: "flex-start" , bgcolor: 'primary.main', mr: 2 }}
+                    }}
                     >
-                        <MenuIcon />
-                    </IconButton>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{gridArea: 'headerLeft', justifyContent: "flex-start", mr: 2}}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                p: 1,
+                                m: 1
+                            }}
+                        >
+                            <Typography variant="h5" component="div" sx={{
+                                gridArea: 'headerCenter', justifyContent: "flex-end"
+                            }}>
+                                trad
+                            </Typography>
 
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            p: 1,
-                            m: 1,
-                            bgcolor: 'primary.main',
-                        }}
-                    >
+                            <SettingsTwoToneIcon fontSize="large"/>
 
-                    <Typography variant="h5" component="div" sx={{
-                        gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
-                         }}>
-                        trad
-                    </Typography>
+                            <Typography variant="h5" component="div" sx={{
+                                gridArea: 'headerCenter', justifyContent: "flex-end"
+                            }}>
+                                mator
+                            </Typography>
+                        </Box>
 
-                       <SettingsTwoToneIcon fontSize="large"/>
+                        <Button
+                            href='/login'
+                            size="small"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            color="inherit"
+                            sx={{gridArea: 'headerRight', justifyContent: 'flex-end'}}
 
-                        <Typography variant="h5" component="div" sx={{
-                            gridArea: 'headerCenter', justifyContent: "flex-end" , bgcolor: 'primary.main'
-                        }}>
-                            mator
-                        </Typography>
+                        >
+                            <AccountCircle/>
+                        </Button>
 
-                    </Box>
+                    </Toolbar>
+                </AppBar>
 
-                    <Button
-
-                        href='/login'
-                        size="small"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        color="inherit"
-                        sx={{gridArea: 'headerRight', justifyContent:'flex-end' ,bgcolor: 'primary.main'}}
-
-                    >
-                        <AccountCircle />
-                    </Button>
-
-
-
-
-
-                </Toolbar>
-            </AppBar>
-        </Box>
+            </Box>
     );
 }

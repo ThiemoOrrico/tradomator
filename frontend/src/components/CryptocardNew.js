@@ -7,7 +7,12 @@ import Avatar from '@mui/material/Avatar';
 export default function CryptocardNew({coinData}) {
     return (
 
-    <ListItem >
+        <ListItem sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateRows: 'auto',
+            ml: 1,
+        }}>
 
             <ListItemAvatar>
                 <Avatar alt="" src={coinData?.imageUrl}/>
@@ -15,17 +20,27 @@ export default function CryptocardNew({coinData}) {
 
 
             <ListItemText
+                sx={{
+                    textAlign: "left",
+                    alignItems:"left",
+                }}
                 primary={coinData?.symbol}
                 secondary={coinData?.id}
-                 />
+            />
 
-             <ListItemText
-                primary={coinData?.currentPrice?.usd}
-             />
-            <ListItemText secondary='USD'/>
+            <ListItemText
+                sx={{
+                    textAlign: "right",
+                    m: 2
+                }}
+                primary={new Intl.NumberFormat('us-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(coinData?.currentPrice?.usd)}
+            />
 
 
-    </ListItem>
+        </ListItem>
 
     )
 }
