@@ -6,8 +6,8 @@ export default function Walletpage(){
     const {wallet} = useWalletBalances()
 
     return (
-      <>
+
         <WalletOverview wallet={wallet}/>
-      </>
+
     )
 }
