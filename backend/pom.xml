@@ -68,6 +68,7 @@
 
 
     <build>
+        <finalName>tm-dev</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
