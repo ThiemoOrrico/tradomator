@@ -65,3 +65,5 @@ jobs:
         run: heroku container:login
       - name: Push docker container
         run: heroku container:release web -a tm-dev
+      - name: Deploy docker container
+        run: heroku container:release web -a tm-dev
