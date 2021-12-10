@@ -2,7 +2,8 @@ name: Deploy tm-dev to heroku
 
 on:
   push:
-
+    branches:
+      - deployment-workflow
 
 jobs:
   build-frontend:
