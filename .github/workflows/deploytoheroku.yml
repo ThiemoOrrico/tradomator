@@ -55,7 +55,9 @@ jobs:
       name: production-heroku
       url: https://tradomator-dev.herokuapp.com/
     env:
-      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+      heroku_app_name: tradomator-dev
+      heroku_email: thiemobile@o2online.de
     steps:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
